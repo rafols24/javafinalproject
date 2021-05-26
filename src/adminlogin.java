@@ -1,4 +1,8 @@
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import javax.swing.JOptionPane;
 
 /*
@@ -149,6 +153,38 @@ public class adminlogin extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+public void userLogIn(String Username, String Password) {
+try {
+           Class.forName("com.mysql.jdbc.Driver");
+           Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/bouquet", "root", "");
+           PreparedStatement st = (PreparedStatement) con.prepareStatement("Select * from `adminlogin` WHERE username=? AND password=? AND status='Active'");
+
+           st.setString(1,Username);
+           st.setString(2, Password);
+           ResultSet res = st.executeQuery();
+
+           if (res.next()) {
+               String USERNAME = res.getString("username");
+               if ("Active".equals(res.getString("status"))) {
+                   JOptionPane.showMessageDialog(this,"Successfully Log In.");
+                   new admindash().setVisible(true);
+                   dispose();
+               } else if ("Deactive".equals(res.getString("status"))) {
+                   JOptionPane.showMessageDialog(this, "Account is not active!", "Error", JOptionPane.ERROR_MESSAGE);
+
+               }
+  } else {
+               System.out.println("Check your username: " + Username);
+               System.out.println("Check your password: " + Password);
+               JOptionPane.showMessageDialog(this, "Username/Password not found/Account is not active!", "Error", JOptionPane.ERROR_MESSAGE);
+
+           }
+       } catch (Exception e) {
+           JOptionPane.showMessageDialog(null, e);
+           System.out.println(e);
+       }
+   }
+
 
     private void loginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginMouseClicked
           if ("admin".equals(username.getText()) && "admin123".equals(password.getText())) {
@@ -160,6 +196,11 @@ public class adminlogin extends javax.swing.JFrame {
             this.username.setText("");
             this.password.setText("");
         }
+
+
+
+   
+
     }//GEN-LAST:event_loginMouseClicked
 
     /**

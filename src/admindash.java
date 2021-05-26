@@ -110,7 +110,6 @@ public class admindash extends javax.swing.JFrame {
         jLabel42 = new javax.swing.JLabel();
         showB = new javax.swing.JLabel();
         add = new javax.swing.JLabel();
-        minus = new javax.swing.JLabel();
         homesales = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         bouquet = new javax.swing.JLabel();
@@ -643,13 +642,6 @@ public class admindash extends javax.swing.JFrame {
             }
         });
 
-        minus.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bouquet/minus.png"))); // NOI18N
-        minus.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                minusMouseClicked(evt);
-            }
-        });
-
         javax.swing.GroupLayout productsLayout = new javax.swing.GroupLayout(products);
         products.setLayout(productsLayout);
         productsLayout.setHorizontalGroup(
@@ -676,7 +668,7 @@ public class admindash extends javax.swing.JFrame {
                     .addGroup(productsLayout.createSequentialGroup()
                         .addGap(293, 293, 293)
                         .addComponent(jLabel22)))
-                .addContainerGap(123, Short.MAX_VALUE))
+                .addContainerGap(184, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, productsLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(productsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -693,7 +685,6 @@ public class admindash extends javax.swing.JFrame {
                             .addComponent(type))
                         .addGap(63, 63, 63)
                         .addGroup(productsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(minus)
                             .addComponent(add)
                             .addComponent(showB))
                         .addGap(167, 167, 167))))
@@ -717,7 +708,7 @@ public class admindash extends javax.swing.JFrame {
                         .addGroup(productsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(B4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(B5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
                 .addGroup(productsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(B7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(B6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -725,19 +716,18 @@ public class admindash extends javax.swing.JFrame {
                 .addGap(16, 16, 16)
                 .addComponent(jLabel22)
                 .addGap(18, 18, 18)
-                .addGroup(productsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(type, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(showB))
+                .addGroup(productsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(showB)
+                    .addGroup(productsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(type, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(productsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(productsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(peices, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(add))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(minus)
-                .addGap(38, 38, 38))
+                .addGap(81, 81, 81))
         );
 
         homesales.setBackground(new java.awt.Color(153, 153, 153));
@@ -1302,8 +1292,7 @@ public class admindash extends javax.swing.JFrame {
             .addGroup(pannelsLayout.createSequentialGroup()
                 .addComponent(sidebar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(admindash, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0))
+                .addComponent(admindash, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addComponent(topvar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         pannelsLayout.setVerticalGroup(
@@ -1313,9 +1302,7 @@ public class admindash extends javax.swing.JFrame {
                 .addGap(0, 0, 0)
                 .addGroup(pannelsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(sidebar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(pannelsLayout.createSequentialGroup()
-                        .addComponent(admindash, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(0, 0, 0))))
+                    .addComponent(admindash, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -1652,7 +1639,7 @@ try {
             Statement stmt = (Statement) con.createStatement(); //get the connection stream(connection port)
             String query = "INSERT INTO bouquet (`type`, `pieces`) VALUES ('" + this.type.getText() + "','" + this.peices.getText() + "')";
             stmt.executeUpdate(query);
-            String stocks = "INSERT INTO stocks(`total`)VALUE('"+this.peices.getText()+"')";
+            String stocks = "INSERT INTO stocks (`total`)VALUES('"+this.peices.getText()+"')";
             stmt.executeUpdate(stocks);
             JOptionPane.showMessageDialog(null, "Added successfull");
             this.type.setText("");
@@ -1671,8 +1658,8 @@ try {
             Class.forName("com.mysql.jdbc.Driver"); //load the driver
             Connection con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/bouquet", "root", ""); //establishes the connection
             Statement stmt = (Statement) con.createStatement(); //get the connection stream(connection port)  
-            ResultSet datas = stmt.executeQuery("select * from `stocks`");
-            datas = stmt.executeQuery("SELECT SUM(`total`)FROM `stocks`");
+            ResultSet datas = stmt.executeQuery("select * from `bouquet`");
+            datas = stmt.executeQuery("SELECT SUM(`pieces`)FROM `bouquet`");
             datas.next();
             int count = datas.getInt(1);
             bouquet.setText(String.valueOf(count));
@@ -1712,28 +1699,6 @@ try {
             System.out.println(e);
         }
     }//GEN-LAST:event_salesbuttonMouseClicked
-
-    private void minusMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_minusMouseClicked
-           int peices = Integer.parseInt(this.peices.getText());
-        try {
-            Class.forName("com.mysql.jdbc.Driver"); //load the driver
-            Connection con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/bouquet", "root", ""); //establishes the connection
-            Statement stmt = (Statement) con.createStatement(); //get the connection stream(connection port)  
-            ResultSet datas = stmt.executeQuery("select * from `bouquet`");
-            datas = stmt.executeQuery("SELECT SUM(`pieces`)FROM `bouquet` WHERE type='nosegay'");
-            datas.next();
-            int count = datas.getInt(1);
-            int diff = (count-peices);
-            nosegay.setText(String.valueOf(diff));
-            String query = ("INSERT INTO flowers(`nosegay`)VALUES('"+diff+"')");
-
-            con.close();
-        } catch (Exception e) {
-            System.out.println(e);
-        }       
-        
-        
-    }//GEN-LAST:event_minusMouseClicked
 
     /**
      * @param args the command line arguments
@@ -1854,7 +1819,6 @@ try {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel logout;
-    private javax.swing.JLabel minus;
     private javax.swing.JLabel nosegay;
     private javax.swing.JLabel npurchase;
     private javax.swing.JTextField pNum;
