@@ -37,19 +37,19 @@ public class adminsignup extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        a = new javax.swing.JLabel();
         b = new javax.swing.JLabel();
         c = new javax.swing.JLabel();
         username = new javax.swing.JTextField();
-        name = new javax.swing.JTextField();
         signup = new javax.swing.JButton();
         password = new javax.swing.JPasswordField();
+        b1 = new javax.swing.JLabel();
+        status = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         pannels.setBackground(new java.awt.Color(255, 153, 153));
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(153, 153, 153));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bouquet/circle-cropped (2).png"))); // NOI18N
 
@@ -63,9 +63,6 @@ public class adminsignup extends javax.swing.JFrame {
             }
         });
 
-        a.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        a.setText("Name");
-
         b.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         b.setText("UserName");
 
@@ -73,8 +70,6 @@ public class adminsignup extends javax.swing.JFrame {
         c.setText("Password");
 
         username.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-
-        name.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
 
         signup.setBackground(new java.awt.Color(0, 0, 0));
         signup.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
@@ -87,6 +82,11 @@ public class adminsignup extends javax.swing.JFrame {
         });
 
         password.setText("jPasswordField1");
+
+        b1.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        b1.setText("Status");
+
+        status.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -107,16 +107,16 @@ public class adminsignup extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(signup, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(a, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(c, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(b, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(c, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(b1, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(52, 52, 52)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(username, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(name, javax.swing.GroupLayout.DEFAULT_SIZE, 129, Short.MAX_VALUE)
-                                    .addComponent(password))))))
-                .addContainerGap(50, Short.MAX_VALUE))
+                                    .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(status, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -127,21 +127,21 @@ public class adminsignup extends javax.swing.JFrame {
                     .addComponent(jLabel2))
                 .addGap(16, 16, 16)
                 .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(a)
-                    .addComponent(name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
+                .addGap(41, 41, 41)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(b)
                     .addComponent(username, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(69, 69, 69)
+                .addGap(61, 61, 61)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(c)
                     .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(27, 27, 27)
+                .addGap(58, 58, 58)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(b1)
+                    .addComponent(status, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(65, 65, 65)
                 .addComponent(signup)
-                .addContainerGap(98, Short.MAX_VALUE))
+                .addContainerGap(52, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout pannelsLayout = new javax.swing.GroupLayout(pannels);
@@ -151,14 +151,14 @@ public class adminsignup extends javax.swing.JFrame {
             .addGroup(pannelsLayout.createSequentialGroup()
                 .addGap(40, 40, 40)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(40, Short.MAX_VALUE))
+                .addContainerGap(54, Short.MAX_VALUE))
         );
         pannelsLayout.setVerticalGroup(
             pannelsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pannelsLayout.createSequentialGroup()
                 .addGap(40, 40, 40)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(29, Short.MAX_VALUE))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -169,7 +169,7 @@ public class adminsignup extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pannels, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(pannels, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -187,7 +187,7 @@ public class adminsignup extends javax.swing.JFrame {
             Class.forName("com.mysql.jdbc.Driver"); //load the driver
             Connection con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/bouquet", "root", ""); //establishes the connection
             Statement stmt = (Statement) con.createStatement(); //get the connection stream(connection port)
-            String query = "INSERT INTO adminlogin (`name`, `username`, `password`) VALUES ('" + this.name.getText() + "','" + this.username.getText() + "','" + this.password.getText() + "')";
+            String query = "INSERT INTO adminlogin ( `username`, `password`,`status`) VALUES ('" + this.username.getText() + "','" + this.password.getText() + "','"+ this.status.getText()+"')";
             stmt.executeUpdate(query);
 //            JOptionPane.showMessageDialog(null, " successfull CHANGE is :" );
             
@@ -235,17 +235,17 @@ public class adminsignup extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel a;
     private javax.swing.JLabel b;
+    private javax.swing.JLabel b1;
     private javax.swing.JLabel c;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField name;
     private javax.swing.JPanel pannels;
     private javax.swing.JPasswordField password;
     private javax.swing.JButton signup;
+    private javax.swing.JTextField status;
     private javax.swing.JTextField username;
     // End of variables declaration//GEN-END:variables
 }

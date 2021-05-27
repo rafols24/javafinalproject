@@ -1,4 +1,8 @@
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import javax.swing.JOptionPane;
 
 /*
@@ -6,7 +10,6 @@ import javax.swing.JOptionPane;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author 2ndyrGroupA
@@ -35,10 +38,10 @@ public class adminlogin extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         username = new javax.swing.JTextField();
-        login = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         password = new javax.swing.JPasswordField();
+        login = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -57,21 +60,18 @@ public class adminlogin extends javax.swing.JFrame {
 
         username.setText("username");
 
-        login.setBackground(new java.awt.Color(0, 0, 0));
-        login.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        login.setForeground(new java.awt.Color(255, 255, 255));
-        login.setText("LOGIN");
-        login.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                loginMouseClicked(evt);
-            }
-        });
-
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bouquet/admin.png"))); // NOI18N
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bouquet/circle-cropped (2).png"))); // NOI18N
 
         password.setText("jPasswordField1");
+
+        login.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bouquet/password.png"))); // NOI18N
+        login.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                loginMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout loginpageLayout = new javax.swing.GroupLayout(loginpage);
         loginpage.setLayout(loginpageLayout);
@@ -89,7 +89,7 @@ public class adminlogin extends javax.swing.JFrame {
                 .addGroup(loginpageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(loginpageLayout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(login, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(login))
                     .addGroup(loginpageLayout.createSequentialGroup()
                         .addGap(46, 46, 46)
                         .addGroup(loginpageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -118,9 +118,9 @@ public class adminlogin extends javax.swing.JFrame {
                 .addGroup(loginpageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(login)
-                .addContainerGap(77, Short.MAX_VALUE))
+                .addContainerGap(93, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout pannelsLayout = new javax.swing.GroupLayout(pannels);
@@ -135,7 +135,7 @@ public class adminlogin extends javax.swing.JFrame {
         pannelsLayout.setVerticalGroup(
             pannelsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pannelsLayout.createSequentialGroup()
-                .addContainerGap(56, Short.MAX_VALUE)
+                .addContainerGap(38, Short.MAX_VALUE)
                 .addComponent(loginpage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(50, 50, 50))
         );
@@ -153,9 +153,41 @@ public class adminlogin extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+public void userLogIn(String Username, String Password) {
+try {
+           Class.forName("com.mysql.jdbc.Driver");
+           Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/bouquet", "root", "");
+           PreparedStatement st = (PreparedStatement) con.prepareStatement("Select * from `adminlogin` WHERE username=? AND password=? AND status='Active'");
+
+           st.setString(1,Username);
+           st.setString(2, Password);
+           ResultSet res = st.executeQuery();
+
+           if (res.next()) {
+               String USERNAME = res.getString("username");
+               if ("Active".equals(res.getString("status"))) {
+                   JOptionPane.showMessageDialog(this,"Successfully Log In.");
+                   new admindash().setVisible(true);
+                   dispose();
+               } else if ("Deactive".equals(res.getString("status"))) {
+                   JOptionPane.showMessageDialog(this, "Account is not active!", "Error", JOptionPane.ERROR_MESSAGE);
+
+               }
+  } else {
+               System.out.println("Check your username: " + Username);
+               System.out.println("Check your password: " + Password);
+               JOptionPane.showMessageDialog(this, "Username/Password not found/Account is not active!", "Error", JOptionPane.ERROR_MESSAGE);
+
+           }
+       } catch (Exception e) {
+           JOptionPane.showMessageDialog(null, e);
+           System.out.println(e);
+       }
+   }
+
 
     private void loginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginMouseClicked
-       if ("admin".equals(username.getText()) && "admin123".equals(password.getText())) {
+          if ("admin".equals(username.getText()) && "admin123".equals(password.getText())) {
             this.setVisible(false);
             new admindash().setVisible(true);
 
@@ -164,6 +196,11 @@ public class adminlogin extends javax.swing.JFrame {
             this.username.setText("");
             this.password.setText("");
         }
+
+
+
+   
+
     }//GEN-LAST:event_loginMouseClicked
 
     /**
@@ -207,7 +244,7 @@ public class adminlogin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JButton login;
+    private javax.swing.JLabel login;
     private javax.swing.JPanel loginpage;
     private javax.swing.JPanel pannels;
     private javax.swing.JPasswordField password;
