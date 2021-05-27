@@ -15,6 +15,7 @@ public class terms extends javax.swing.JFrame {
      */
     public terms() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**

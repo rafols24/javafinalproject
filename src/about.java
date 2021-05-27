@@ -15,6 +15,7 @@ public class about extends javax.swing.JFrame {
      */
     public about() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**

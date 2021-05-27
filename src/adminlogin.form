@@ -95,7 +95,7 @@
                               </Group>
                               <EmptySpace pref="39" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="username" pref="120" max="32767" attributes="0"/>
+                                  <Component id="username1" pref="120" max="32767" attributes="0"/>
                                   <Component id="password" max="32767" attributes="0"/>
                               </Group>
                           </Group>
@@ -117,7 +117,7 @@
                       <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                          <Component id="username" min="-2" pref="29" max="-2" attributes="0"/>
+                          <Component id="username1" min="-2" pref="29" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -156,7 +156,7 @@
                 <Property name="text" type="java.lang.String" value="password:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="username">
+            <Component class="javax.swing.JTextField" name="username1">
               <Properties>
                 <Property name="text" type="java.lang.String" value="username"/>
               </Properties>

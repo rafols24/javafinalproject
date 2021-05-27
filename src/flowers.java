@@ -15,6 +15,7 @@ public class flowers extends javax.swing.JFrame {
      */
     public flowers() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
