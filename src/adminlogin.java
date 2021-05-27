@@ -21,6 +21,7 @@ public class adminlogin extends javax.swing.JFrame {
      */
     public adminlogin() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -37,7 +38,7 @@ public class adminlogin extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        username = new javax.swing.JTextField();
+        username1 = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         password = new javax.swing.JPasswordField();
@@ -58,7 +59,7 @@ public class adminlogin extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel4.setText("password:");
 
-        username.setText("username");
+        username1.setText("username");
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bouquet/admin.png"))); // NOI18N
 
@@ -97,7 +98,7 @@ public class adminlogin extends javax.swing.JFrame {
                             .addComponent(jLabel4))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
                         .addGroup(loginpageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(username, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
+                            .addComponent(username1, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
                             .addComponent(password))))
                 .addGap(47, 47, 47))
         );
@@ -113,7 +114,7 @@ public class adminlogin extends javax.swing.JFrame {
                 .addGap(41, 41, 41)
                 .addGroup(loginpageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel3)
-                    .addComponent(username, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(username1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(46, 46, 46)
                 .addGroup(loginpageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
@@ -157,7 +158,7 @@ public void userLogIn(String Username, String Password) {
 try {
            Class.forName("com.mysql.jdbc.Driver");
            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/bouquet", "root", "");
-           PreparedStatement st = (PreparedStatement) con.prepareStatement("Select * from `adminlogin` WHERE username=? AND password=? AND status='Active'");
+           PreparedStatement st = (PreparedStatement) con.prepareStatement("Select * from `adminlogin` WHERE username=? AND password=? AND status='active'");
 
            st.setString(1,Username);
            st.setString(2, Password);
@@ -165,11 +166,11 @@ try {
 
            if (res.next()) {
                String USERNAME = res.getString("username");
-               if ("Active".equals(res.getString("status"))) {
+               if ("active".equals(res.getString("status"))) {
                    JOptionPane.showMessageDialog(this,"Successfully Log In.");
                    new admindash().setVisible(true);
                    dispose();
-               } else if ("Deactive".equals(res.getString("status"))) {
+               } else if ("inactive".equals(res.getString("status"))) {
                    JOptionPane.showMessageDialog(this, "Account is not active!", "Error", JOptionPane.ERROR_MESSAGE);
 
                }
@@ -187,16 +188,18 @@ try {
 
 
     private void loginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginMouseClicked
-          if ("admin".equals(username.getText()) && "admin123".equals(password.getText())) {
-            this.setVisible(false);
-            new admindash().setVisible(true);
 
-        } else {
-            JOptionPane.showMessageDialog(this, "username or password is wrong", "Alert", JOptionPane.ERROR_MESSAGE);
-            this.username.setText("");
-            this.password.setText("");
-        }
 
+    String Username = username1.getText();
+       String Password = String.valueOf(password.getPassword());
+
+       if (Username.isEmpty() || Password.isEmpty()) {
+           JOptionPane.showMessageDialog(this, "It should not be empty", "Error", JOptionPane.ERROR_MESSAGE);
+       } else {
+           userLogIn(Username, Password);
+       }
+
+            
 
 
    
@@ -248,6 +251,6 @@ try {
     private javax.swing.JPanel loginpage;
     private javax.swing.JPanel pannels;
     private javax.swing.JPasswordField password;
-    private javax.swing.JTextField username;
+    private javax.swing.JTextField username1;
     // End of variables declaration//GEN-END:variables
 }

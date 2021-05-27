@@ -71,7 +71,7 @@ public class admindash extends javax.swing.JFrame {
         topvar = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel47 = new javax.swing.JLabel();
+        admins = new javax.swing.JLabel();
         logout = new javax.swing.JLabel();
         admindash = new javax.swing.JPanel();
         products = new javax.swing.JPanel();
@@ -278,7 +278,12 @@ public class admindash extends javax.swing.JFrame {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bouquet/circle-cropped (2).png"))); // NOI18N
 
-        jLabel47.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bouquet/user-avatar-with-check-mark.png"))); // NOI18N
+        admins.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bouquet/user-avatar-with-check-mark.png"))); // NOI18N
+        admins.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                adminsMouseClicked(evt);
+            }
+        });
 
         logout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bouquet/logout (1).png"))); // NOI18N
         logout.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -297,8 +302,8 @@ public class admindash extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel47)
-                .addGap(151, 151, 151)
+                .addComponent(admins)
+                .addGap(26, 26, 26)
                 .addComponent(logout)
                 .addGap(29, 29, 29))
         );
@@ -311,13 +316,13 @@ public class admindash extends javax.swing.JFrame {
             .addGroup(topvarLayout.createSequentialGroup()
                 .addGap(24, 24, 24)
                 .addGroup(topvarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel47, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(admins, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3)
                     .addComponent(logout))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        products.setBackground(new java.awt.Color(153, 153, 153));
+        products.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel22.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel22.setText("ADD BOUQUETS");
@@ -730,7 +735,7 @@ public class admindash extends javax.swing.JFrame {
                 .addGap(81, 81, 81))
         );
 
-        homesales.setBackground(new java.awt.Color(153, 153, 153));
+        homesales.setBackground(new java.awt.Color(255, 255, 255));
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 0));
 
@@ -804,7 +809,7 @@ public class admindash extends javax.swing.JFrame {
                     .addComponent(jLabel2))
                 .addGap(18, 18, 18)
                 .addComponent(npurchase, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(52, Short.MAX_VALUE))
         );
 
         jPanel3.setBackground(new java.awt.Color(0, 0, 0));
@@ -843,7 +848,7 @@ public class admindash extends javax.swing.JFrame {
                     .addComponent(jLabel49))
                 .addGap(27, 27, 27)
                 .addComponent(tsales, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(43, Short.MAX_VALUE))
         );
 
         jLabel37.setFont(new java.awt.Font("Monospaced", 1, 36)); // NOI18N
@@ -863,47 +868,48 @@ public class admindash extends javax.swing.JFrame {
         homesalesLayout.setHorizontalGroup(
             homesalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(homesalesLayout.createSequentialGroup()
-                .addGap(233, 233, 233)
-                .addComponent(salesbutton)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel37)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(homesalesLayout.createSequentialGroup()
-                .addGroup(homesalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(homesalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(homesalesLayout.createSequentialGroup()
-                        .addGap(58, 58, 58)
+                        .addGap(233, 233, 233)
+                        .addComponent(salesbutton)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel37))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, homesalesLayout.createSequentialGroup()
+                        .addGap(62, 62, 62)
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(68, 68, 68)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(55, 55, 55)
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(homesalesLayout.createSequentialGroup()
-                        .addGap(257, 257, 257)
-                        .addComponent(jLabel50)))
-                .addContainerGap(66, Short.MAX_VALUE))
+                        .addGap(62, 62, 62)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28))
+            .addGroup(homesalesLayout.createSequentialGroup()
+                .addGap(255, 255, 255)
+                .addComponent(jLabel50)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         homesalesLayout.setVerticalGroup(
             homesalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(homesalesLayout.createSequentialGroup()
-                .addGap(39, 39, 39)
+                .addGap(19, 19, 19)
                 .addGroup(homesalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel37)
                     .addComponent(salesbutton))
-                .addGap(67, 67, 67)
-                .addGroup(homesalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
+                .addGap(37, 37, 37)
+                .addGroup(homesalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(39, 39, 39)
                 .addComponent(jLabel50)
-                .addGap(39, 39, 39))
+                .addContainerGap(73, Short.MAX_VALUE))
         );
 
-        customerpage.setBackground(new java.awt.Color(153, 153, 153));
+        customerpage.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel11.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jLabel11.setText("CUSTOMERS");
 
+        customers.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         customers.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -945,6 +951,11 @@ public class admindash extends javax.swing.JFrame {
                 deleteMouseClicked(evt);
             }
         });
+        delete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteActionPerformed(evt);
+            }
+        });
 
         jLabel38.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel38.setText("Id Number");
@@ -957,6 +968,14 @@ public class admindash extends javax.swing.JFrame {
 
         jLabel41.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel41.setText("phone Number");
+
+        idNum.setBackground(new java.awt.Color(255, 153, 153));
+
+        fName.setBackground(new java.awt.Color(255, 153, 153));
+
+        Address.setBackground(new java.awt.Color(255, 153, 153));
+
+        pNum.setBackground(new java.awt.Color(255, 153, 153));
 
         javax.swing.GroupLayout customerpageLayout = new javax.swing.GroupLayout(customerpage);
         customerpage.setLayout(customerpageLayout);
@@ -971,12 +990,9 @@ public class admindash extends javax.swing.JFrame {
                         .addGroup(customerpageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(customerpageLayout.createSequentialGroup()
                                 .addGap(162, 162, 162)
-                                .addGroup(customerpageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(pNum, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(customerpageLayout.createSequentialGroup()
-                                        .addComponent(jLabel38, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(63, 63, 63)
-                                        .addComponent(idNum, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(jLabel38, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(63, 63, 63)
+                                .addComponent(idNum, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(customerpageLayout.createSequentialGroup()
                                 .addGap(149, 149, 149)
                                 .addGroup(customerpageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -986,54 +1002,55 @@ public class admindash extends javax.swing.JFrame {
                                         .addComponent(jLabel40)))
                                 .addGap(99, 99, 99)
                                 .addGroup(customerpageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(Address, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(fName, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addGroup(customerpageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(Address, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(pNum, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(fName, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(64, 64, 64)
-                        .addGroup(customerpageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(update)
-                            .addComponent(show, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(delete))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, customerpageLayout.createSequentialGroup()
-                .addGap(0, 48, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 587, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(77, 77, 77))
+                        .addGroup(customerpageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(update, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(show, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(delete, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(customerpageLayout.createSequentialGroup()
+                        .addGap(61, 61, 61)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 587, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(64, Short.MAX_VALUE))
         );
         customerpageLayout.setVerticalGroup(
             customerpageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(customerpageLayout.createSequentialGroup()
                 .addGap(23, 23, 23)
                 .addComponent(jLabel11)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(1, 1, 1)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(customerpageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel38, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(customerpageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(idNum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(show)))
+                .addGap(11, 11, 11)
                 .addGroup(customerpageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(customerpageLayout.createSequentialGroup()
-                        .addGap(11, 11, 11)
-                        .addComponent(update)
-                        .addGap(18, 18, 18)
-                        .addComponent(delete))
-                    .addGroup(customerpageLayout.createSequentialGroup()
                         .addGroup(customerpageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel39)
-                            .addComponent(fName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(11, 11, 11)
+                            .addComponent(fName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel39))
+                        .addGap(9, 9, 9)
                         .addGroup(customerpageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel40)
-                            .addComponent(Address, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(Address, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel40))
                         .addGap(18, 18, 18)
                         .addGroup(customerpageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(pNum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel41))))
-                .addContainerGap(231, Short.MAX_VALUE))
+                            .addComponent(jLabel41)))
+                    .addGroup(customerpageLayout.createSequentialGroup()
+                        .addComponent(update)
+                        .addGap(18, 18, 18)
+                        .addComponent(delete)))
+                .addContainerGap(222, Short.MAX_VALUE))
         );
 
-        purchasepage.setBackground(new java.awt.Color(153, 153, 153));
+        purchasepage.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jLabel4.setText("PURCHASE");
@@ -1181,7 +1198,7 @@ public class admindash extends javax.swing.JFrame {
                                 .addComponent(price)
                                 .addComponent(payment, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
                                 .addComponent(total)))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 83, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 176, Short.MAX_VALUE)
                 .addGroup(purchasepageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel16)
                     .addComponent(jLabel15)
@@ -1340,13 +1357,7 @@ public class admindash extends javax.swing.JFrame {
             Statement stmt = (Statement) con.createStatement(); //get the connection stream(connection port)
             String query = "INSERT INTO purchases (`fullname`, `address`, `phonenumber`,`flowertype`,`pieces`,`price`,`payment`,`total`) VALUES ('" + this.fullname.getText() + "','" + this.address.getText() + "','" + this.phonenumber.getText() + "', '" + this.flowertype.getText() + "','" + this.pieces.getText() + "','" + this.price.getText() + "','" + this.payment.getText() + "','" + this.total.getText() + "')";
             stmt.executeUpdate(query);
-            ResultSet Squery =stmt.executeQuery ("SELECT SUM(`total`)FROM `stocks`");
-            Squery.next();
-            int count = Squery.getInt(1);
-            int stocks = count-pieces;
-            String Stock = "UPDATE stocks SET total = '"+stocks+"' ";
-            stmt.executeUpdate(Stock);
-      
+            
             
             JOptionPane.showMessageDialog(null, "Order successfull CHANGE is :" + change);
             this.fullname.setText("");
@@ -1504,7 +1515,13 @@ try {
             datas = stmt.executeQuery("SELECT SUM(`pieces`)FROM `bouquet` WHERE type='nosegay'");
             datas.next();
             int count = datas.getInt(1);
-            nosegay.setText(String.valueOf(count));
+            
+            ResultSet data = stmt.executeQuery("select * from `purchases`");
+            data = stmt.executeQuery("SELECT SUM(`pieces`)FROM `purchases` WHERE flowertype='nosegay'");
+            data.next();
+            int count1 = data.getInt(1);
+            int total= count-count1;
+            nosegay.setText(String.valueOf(total));
 
             con.close();
         } catch (Exception e) {
@@ -1519,7 +1536,13 @@ try {
             datas = stmt.executeQuery("SELECT SUM(`pieces`)FROM `bouquet` WHERE type='cascade'");
             datas.next();
             int count = datas.getInt(1);
-            cascade.setText(String.valueOf(count));
+            ResultSet data = stmt.executeQuery("select * from `purchases`");
+            data = stmt.executeQuery("SELECT SUM(`pieces`)FROM `purchases` WHERE flowertype='cascade'");
+            data.next();
+            int count1 = data.getInt(1);
+            int total= count-count1;
+            cascade.setText(String.valueOf(total));
+          
 
             con.close();
         } catch (Exception e) {
@@ -1534,7 +1557,13 @@ try {
             datas = stmt.executeQuery("SELECT SUM(`pieces`)FROM `bouquet` WHERE type='singlestem'");
             datas.next();
             int count = datas.getInt(1);
-            singlestem.setText(String.valueOf(count));
+            ResultSet data = stmt.executeQuery("select * from `purchases`");
+            data = stmt.executeQuery("SELECT SUM(`pieces`)FROM `purchases` WHERE flowertype='singlestem'");
+            data.next();
+            int count1 = data.getInt(1);
+            int total= count-count1;
+            singlestem.setText(String.valueOf(total));
+            
 
             con.close();
         } catch (Exception e) {
@@ -1549,7 +1578,13 @@ try {
             datas = stmt.executeQuery("SELECT SUM(`pieces`)FROM `bouquet` WHERE type='posey'");
             datas.next();
             int count = datas.getInt(1);
-            posey.setText(String.valueOf(count));
+             ResultSet data = stmt.executeQuery("select * from `purchases`");
+            data = stmt.executeQuery("SELECT SUM(`pieces`)FROM `purchases` WHERE flowertype='posey'");
+            data.next();
+            int count1 = data.getInt(1);
+            int total= count-count1;
+            posey.setText(String.valueOf(total));
+            
 
             con.close();
         } catch (Exception e) {
@@ -1564,7 +1599,13 @@ try {
             datas = stmt.executeQuery("SELECT SUM(`pieces`)FROM `bouquet` WHERE type='round'");
             datas.next();
             int count = datas.getInt(1);
-            round.setText(String.valueOf(count));
+             ResultSet data = stmt.executeQuery("select * from `purchases`");
+            data = stmt.executeQuery("SELECT SUM(`pieces`)FROM `purchases` WHERE flowertype='round'");
+            data.next();
+            int count1 = data.getInt(1);
+            int total= count-count1;
+            round.setText(String.valueOf(total));
+            
 
             con.close();
         } catch (Exception e) {
@@ -1579,7 +1620,13 @@ try {
             datas = stmt.executeQuery("SELECT SUM(`pieces`)FROM `bouquet` WHERE type='beidermeir'");
             datas.next();
             int count = datas.getInt(1);
-            beidermeir.setText(String.valueOf(count));
+            ResultSet data = stmt.executeQuery("select * from `purchases`");
+            data = stmt.executeQuery("SELECT SUM(`pieces`)FROM `purchases` WHERE flowertype='beidermeir'");
+            data.next();
+            int count1 = data.getInt(1);
+            int total= count-count1;
+            beidermeir.setText(String.valueOf(total));
+            
 
             con.close();
         } catch (Exception e) {
@@ -1594,7 +1641,13 @@ try {
             datas = stmt.executeQuery("SELECT SUM(`pieces`)FROM `bouquet` WHERE type='handtied'");
             datas.next();
             int count = datas.getInt(1);
-            handtied.setText(String.valueOf(count));
+            ResultSet data = stmt.executeQuery("select * from `purchases`");
+            data = stmt.executeQuery("SELECT SUM(`pieces`)FROM `purchases` WHERE flowertype='handtied'");
+            data.next();
+            int count1 = data.getInt(1);
+            int total= count-count1;
+            handtied.setText(String.valueOf(total));
+           
 
             con.close();
         } catch (Exception e) {
@@ -1609,7 +1662,13 @@ try {
             datas = stmt.executeQuery("SELECT SUM(`pieces`)FROM `bouquet` WHERE type='contemporary'");
             datas.next();
             int count = datas.getInt(1);
-            contemporary.setText(String.valueOf(count));
+            ResultSet data = stmt.executeQuery("select * from `purchases`");
+            data = stmt.executeQuery("SELECT SUM(`pieces`)FROM `purchases` WHERE flowertype='contemporary'");
+            data.next();
+            int count1 = data.getInt(1);
+            int total= count-count1;
+            contemporary.setText(String.valueOf(total));
+           
 
             con.close();
         } catch (Exception e) {
@@ -1624,7 +1683,13 @@ try {
             datas = stmt.executeQuery("SELECT SUM(`pieces`)FROM `bouquet` WHERE type='composite'");
             datas.next();
             int count = datas.getInt(1);
-            composite.setText(String.valueOf(count));
+            ResultSet data = stmt.executeQuery("select * from `purchases`");
+            data = stmt.executeQuery("SELECT SUM(`pieces`)FROM `purchases` WHERE flowertype='composite'");
+            data.next();
+            int count1 = data.getInt(1);
+            int total= count-count1;
+            composite.setText(String.valueOf(total));
+          
 
             con.close();
         } catch (Exception e) {
@@ -1639,8 +1704,6 @@ try {
             Statement stmt = (Statement) con.createStatement(); //get the connection stream(connection port)
             String query = "INSERT INTO bouquet (`type`, `pieces`) VALUES ('" + this.type.getText() + "','" + this.peices.getText() + "')";
             stmt.executeUpdate(query);
-            String stocks = "INSERT INTO stocks (`total`)VALUES('"+this.peices.getText()+"')";
-            stmt.executeUpdate(stocks);
             JOptionPane.showMessageDialog(null, "Added successfull");
             this.type.setText("");
             this.peices.setText("");
@@ -1662,7 +1725,12 @@ try {
             datas = stmt.executeQuery("SELECT SUM(`pieces`)FROM `bouquet`");
             datas.next();
             int count = datas.getInt(1);
-            bouquet.setText(String.valueOf(count));
+            ResultSet data = stmt.executeQuery("select * from `purchases`");
+            data = stmt.executeQuery("SELECT SUM(`pieces`)FROM `purchases`");          
+            data.next();           
+            int count1 = data.getInt(1);
+            int stock = count-count1;
+            bouquet.setText(String.valueOf(stock));
 
             con.close();
         } catch (Exception e) {
@@ -1699,6 +1767,15 @@ try {
             System.out.println(e);
         }
     }//GEN-LAST:event_salesbuttonMouseClicked
+
+    private void adminsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminsMouseClicked
+        this.setVisible(false);
+        new adminlogs().setVisible(true);
+    }//GEN-LAST:event_adminsMouseClicked
+
+    private void deleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_deleteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1749,6 +1826,7 @@ try {
     private javax.swing.JLabel add;
     private javax.swing.JTextField address;
     private javax.swing.JPanel admindash;
+    private javax.swing.JLabel admins;
     private javax.swing.JLabel beidermeir;
     private javax.swing.JLabel bouquet;
     private javax.swing.JLabel cascade;
@@ -1805,7 +1883,6 @@ try {
     private javax.swing.JLabel jLabel44;
     private javax.swing.JLabel jLabel45;
     private javax.swing.JLabel jLabel46;
-    private javax.swing.JLabel jLabel47;
     private javax.swing.JLabel jLabel48;
     private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;

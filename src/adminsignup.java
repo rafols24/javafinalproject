@@ -21,6 +21,7 @@ public class adminsignup extends javax.swing.JFrame {
      */
     public adminsignup() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -40,10 +41,10 @@ public class adminsignup extends javax.swing.JFrame {
         b = new javax.swing.JLabel();
         c = new javax.swing.JLabel();
         username = new javax.swing.JTextField();
-        signup = new javax.swing.JButton();
         password = new javax.swing.JPasswordField();
         b1 = new javax.swing.JLabel();
         status = new javax.swing.JTextField();
+        signup1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -71,22 +72,20 @@ public class adminsignup extends javax.swing.JFrame {
 
         username.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
 
-        signup.setBackground(new java.awt.Color(0, 0, 0));
-        signup.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        signup.setForeground(new java.awt.Color(255, 255, 255));
-        signup.setText("SignUp");
-        signup.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                signupMouseClicked(evt);
-            }
-        });
-
         password.setText("jPasswordField1");
 
         b1.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         b1.setText("Status");
 
         status.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+
+        signup1.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        signup1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bouquet/password.png"))); // NOI18N
+        signup1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                signup1MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -105,17 +104,15 @@ public class adminsignup extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(45, 45, 45)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(signup, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(c, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(b, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(b1, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(52, 52, 52)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(username, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(status, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                            .addComponent(c, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(b, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(b1, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(52, 52, 52)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(username, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(status, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(signup1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(31, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -139,9 +136,9 @@ public class adminsignup extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(b1)
                     .addComponent(status, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(65, 65, 65)
-                .addComponent(signup)
-                .addContainerGap(52, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(signup1)
+                .addContainerGap(117, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout pannelsLayout = new javax.swing.GroupLayout(pannels);
@@ -179,8 +176,8 @@ public class adminsignup extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jLabel3ComponentHidden
 
-    private void signupMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_signupMouseClicked
-       this.setVisible(false);
+    private void signup1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_signup1MouseClicked
+        this.setVisible(false);
        new adminlogin().setVisible(true);
        
        try {
@@ -196,8 +193,7 @@ public class adminsignup extends javax.swing.JFrame {
         } catch (Exception e) {
             System.out.println(e);
         }
-        
-    }//GEN-LAST:event_signupMouseClicked
+    }//GEN-LAST:event_signup1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -244,7 +240,7 @@ public class adminsignup extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel pannels;
     private javax.swing.JPasswordField password;
-    private javax.swing.JButton signup;
+    private javax.swing.JLabel signup1;
     private javax.swing.JTextField status;
     private javax.swing.JTextField username;
     // End of variables declaration//GEN-END:variables

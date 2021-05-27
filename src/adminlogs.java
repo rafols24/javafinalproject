@@ -1,3 +1,13 @@
+
+import com.mysql.jdbc.Connection;
+import java.awt.HeadlessException;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -15,6 +25,7 @@ public class adminlogs extends javax.swing.JFrame {
      */
     public adminlogs() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -26,21 +37,248 @@ public class adminlogs extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        pannels = new javax.swing.JPanel();
+        top = new javax.swing.JPanel();
+        logo = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        adminsTable = new javax.swing.JTable();
+        show = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        username = new javax.swing.JTextField();
+        deactivate = new javax.swing.JButton();
+        activate = new javax.swing.JButton();
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        pannels.setBackground(new java.awt.Color(255, 255, 255));
+
+        top.setBackground(new java.awt.Color(255, 153, 153));
+
+        logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bouquet/circle-cropped (2).png"))); // NOI18N
+        logo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                logoMouseClicked(evt);
+            }
+        });
+
+        jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        jLabel2.setText("ADMINS");
+
+        javax.swing.GroupLayout topLayout = new javax.swing.GroupLayout(top);
+        top.setLayout(topLayout);
+        topLayout.setHorizontalGroup(
+            topLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(topLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(logo)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel2)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        topLayout.setVerticalGroup(
+            topLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(topLayout.createSequentialGroup()
+                .addGroup(topLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(topLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(logo))
+                    .addGroup(topLayout.createSequentialGroup()
+                        .addGap(31, 31, 31)
+                        .addComponent(jLabel2)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        adminsTable.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        adminsTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "USERNAME", "STATUS"
+            }
+        ));
+        jScrollPane1.setViewportView(adminsTable);
+
+        show.setBackground(new java.awt.Color(0, 0, 0));
+        show.setForeground(new java.awt.Color(255, 255, 255));
+        show.setText("show");
+        show.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                showMouseClicked(evt);
+            }
+        });
+
+        jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel3.setText("DEACTIVATE ADMINS");
+
+        jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel4.setText("username:");
+
+        deactivate.setBackground(new java.awt.Color(0, 0, 0));
+        deactivate.setForeground(new java.awt.Color(255, 255, 255));
+        deactivate.setText("deact.");
+        deactivate.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                deactivateMouseClicked(evt);
+            }
+        });
+
+        activate.setBackground(new java.awt.Color(0, 0, 0));
+        activate.setForeground(new java.awt.Color(255, 255, 255));
+        activate.setText("acti.");
+        activate.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                activateMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout pannelsLayout = new javax.swing.GroupLayout(pannels);
+        pannels.setLayout(pannelsLayout);
+        pannelsLayout.setHorizontalGroup(
+            pannelsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(top, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pannelsLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel3)
+                .addGap(223, 223, 223))
+            .addGroup(pannelsLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(pannelsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(deactivate, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(show, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(activate, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(113, 113, 113))
+            .addGroup(pannelsLayout.createSequentialGroup()
+                .addGroup(pannelsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pannelsLayout.createSequentialGroup()
+                        .addGap(158, 158, 158)
+                        .addComponent(jLabel4)
+                        .addGap(100, 100, 100)
+                        .addComponent(username, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pannelsLayout.createSequentialGroup()
+                        .addGap(70, 70, 70)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 476, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(110, Short.MAX_VALUE))
+        );
+        pannelsLayout.setVerticalGroup(
+            pannelsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pannelsLayout.createSequentialGroup()
+                .addComponent(top, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(15, 15, 15)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(show)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel3)
+                .addGap(43, 43, 43)
+                .addGroup(pannelsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(username, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(31, 31, 31)
+                .addComponent(deactivate)
+                .addGap(45, 45, 45)
+                .addComponent(activate)
+                .addGap(40, 40, 40))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 690, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(pannels, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 525, Short.MAX_VALUE)
+            .addComponent(pannels, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void showMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_showMouseClicked
+         int count = 0;
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            java.sql.Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/bouquet", "root", "");
+            Statement stmt = con.createStatement();
+
+            ResultSet datas = stmt.executeQuery("select * from `adminlogin`");
+            DefaultTableModel model = (DefaultTableModel)adminsTable.getModel();
+            while (datas.next()) {
+                count = 1;
+                model.addRow(new Object[]{ datas.getString("username"), datas.getString("status"),});
+            }
+            if (count == 0) {
+                JOptionPane.showMessageDialog(null, "No data found!.", "Alert", JOptionPane.WARNING_MESSAGE);
+            }
+            con.close();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    
+    }//GEN-LAST:event_showMouseClicked
+
+    private void deactivateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deactivateMouseClicked
+        try {
+            Class.forName("com.mysql.jdbc.Driver"); //load the driver
+            try (Connection con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/bouquet", "root", "") //establishes the connection
+                    ) {
+                com.mysql.jdbc.Statement stmt = (com.mysql.jdbc.Statement) con.createStatement();
+                
+                String query = "UPDATE adminlogin Set status = 'inactive' Where username='"+this.username.getText()+"' ";
+                stmt.executeUpdate(query);
+                JOptionPane.showMessageDialog(null, "admin successfully deactivated");
+                username.setText("");
+               
+            }
+
+        } catch (HeadlessException | ClassNotFoundException | SQLException ex) {
+            JOptionPane.showMessageDialog(null, ex);
+            System.out.print(ex);
+
+        }
+    }//GEN-LAST:event_deactivateMouseClicked
+
+    private void activateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_activateMouseClicked
+                try {
+            Class.forName("com.mysql.jdbc.Driver"); //load the driver
+            try (Connection con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/bouquet", "root", "") //establishes the connection
+                    ) {
+                com.mysql.jdbc.Statement stmt = (com.mysql.jdbc.Statement) con.createStatement();
+                String query = "UPDATE adminlogin Set status= 'active' Where username= '" + this.username.getText() + "'";
+                stmt.executeUpdate(query);
+                JOptionPane.showMessageDialog(null, "admin successfully activated");
+                username.setText("");
+               
+            }
+
+        } catch (HeadlessException | ClassNotFoundException | SQLException ex) {
+            JOptionPane.showMessageDialog(null, ex);
+            System.out.print(ex);
+
+        }
+    }//GEN-LAST:event_activateMouseClicked
+
+    private void logoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoMouseClicked
+        this.setVisible(false);
+        new admindash().setVisible(true);
+    }//GEN-LAST:event_logoMouseClicked
 
     /**
      * @param args the command line arguments
@@ -78,5 +316,18 @@ public class adminlogs extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton activate;
+    private javax.swing.JTable adminsTable;
+    private javax.swing.JButton deactivate;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel logo;
+    private javax.swing.JPanel pannels;
+    private javax.swing.JButton show;
+    private javax.swing.JPanel top;
+    private javax.swing.JTextField username;
     // End of variables declaration//GEN-END:variables
 }

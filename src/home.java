@@ -15,6 +15,7 @@ public class home extends javax.swing.JFrame {
      */
     public home() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -381,7 +382,8 @@ public class home extends javax.swing.JFrame {
     }//GEN-LAST:event_flowersMouseClicked
 
     private void signupMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_signupMouseClicked
-        // TODO add your handling code here:
+       this.setVisible(false);
+       new adminsignup().setVisible(true);
     }//GEN-LAST:event_signupMouseClicked
 
     private void signupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signupActionPerformed

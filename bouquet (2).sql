@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 4.9.2
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: May 26, 2021 at 12:55 PM
--- Server version: 10.3.16-MariaDB
--- PHP Version: 7.3.6
+-- Host: 127.0.0.1
+-- Generation Time: May 27, 2021 at 11:39 PM
+-- Server version: 10.4.10-MariaDB
+-- PHP Version: 7.1.33
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -30,7 +30,6 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `adminlogin` (
   `id` int(50) NOT NULL,
-  `name` varchar(200) NOT NULL,
   `username` varchar(100) NOT NULL,
   `password` varchar(100) NOT NULL,
   `status` varchar(50) NOT NULL
@@ -40,12 +39,9 @@ CREATE TABLE `adminlogin` (
 -- Dumping data for table `adminlogin`
 --
 
-INSERT INTO `adminlogin` (`id`, `name`, `username`, `password`, `status`) VALUES
-(1, '', 'admin', 'admin123', ''),
-(2, 'emelisa', 'emelisa', 'emelisa', ''),
-(3, 'rafols', 'rafols', 'rafols', ''),
-(4, 'jessa', 'jessa', 'jessa', ''),
-(5, '', 'nelson', 'nelson', 'active');
+INSERT INTO `adminlogin` (`id`, `username`, `password`, `status`) VALUES
+(17, 'admin', 'admin', 'inactive'),
+(18, 'emelisa', 'emelisa', 'active');
 
 -- --------------------------------------------------------
 
@@ -64,15 +60,8 @@ CREATE TABLE `bouquet` (
 --
 
 INSERT INTO `bouquet` (`id`, `type`, `pieces`) VALUES
-(37, 'singlestem', 100),
-(38, 'cascade', 100),
-(39, 'nosegay', 100),
-(40, 'posey', 100),
-(41, 'round', 100),
-(42, 'beidermeir', 100),
-(43, 'handtied', 100),
-(44, 'contemporary', 100),
-(45, 'composite', 100);
+(67, 'singlestem', 100),
+(68, 'cascade', 100);
 
 -- --------------------------------------------------------
 
@@ -91,44 +80,6 @@ CREATE TABLE `purchases` (
   `payment` int(100) NOT NULL,
   `total` int(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `purchases`
---
-
-INSERT INTO `purchases` (`fullname`, `address`, `phonenumber`, `flowertype`, `pieces`, `price`, `id`, `payment`, `total`) VALUES
-('emelisa', 'negros', '09878765434', 'cascade', 12, 1, 33, 15, 12);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `stocks`
---
-
-CREATE TABLE `stocks` (
-  `total` int(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `stocks`
---
-
-INSERT INTO `stocks` (`total`) VALUES
-(2703),
-(2703),
-(2703),
-(2703),
-(2703),
-(2703),
-(2703),
-(2703),
-(2703),
-(2703),
-(2703),
-(2703),
-(2703),
-(2703),
-(2703);
 
 --
 -- Indexes for dumped tables
@@ -160,19 +111,19 @@ ALTER TABLE `purchases`
 -- AUTO_INCREMENT for table `adminlogin`
 --
 ALTER TABLE `adminlogin`
-  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `bouquet`
 --
 ALTER TABLE `bouquet`
-  MODIFY `id` int(13) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+  MODIFY `id` int(13) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
 
 --
 -- AUTO_INCREMENT for table `purchases`
 --
 ALTER TABLE `purchases`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
